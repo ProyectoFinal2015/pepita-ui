@@ -1,3 +1,5 @@
 [![Stories in Ready](https://badge.waffle.io/proyectofinal2015/pepita-ui.png?label=ready&title=Ready)](https://waffle.io/proyectofinal2015/pepita-ui)
 # pepita-ui
+
+[![Join the chat at https://gitter.im/ProyectoFinal2015/pepita-ui](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ProyectoFinal2015/pepita-ui?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 implementación gráfica de el ejercicio Pepita la golondrina.
