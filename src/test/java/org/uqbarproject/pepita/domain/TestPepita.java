@@ -10,6 +10,7 @@ public class TestPepita {
 	private Pepita pepita;
 	private Manzana manzana;
 	private BolsaDeAlpiste cienDeAlpiste;
+	private Ciudad gesell;
 
 	@Before
 	public void init(){
@@ -17,6 +18,7 @@ public class TestPepita {
 		manzana = new Manzana();
 		cienDeAlpiste = new BolsaDeAlpiste(100);
 		pepita.setCiudad(new Ciudad(0));
+		gesell = new Ciudad(400);
 	}
 	
 	@Test
@@ -31,11 +33,17 @@ public class TestPepita {
 		assertEquals(8000,pepita.getEnergia());		
 	}
 	
-	public void pepitaComeCienDeAlpisteYVuelaAGessell(){
+	@Test
+	public void pepitaVuelaYBajaSuEnergia(){
 		pepita.come(cienDeAlpiste);
-		pepita.volaHacia(new Ciudad(400));
-		assertEquals(5685,pepita.getEnergia());
+		pepita.volaHacia(gesell);
+		assertEquals(5585,pepita.getEnergia());
 	}
 	
-	
+	@Test
+	public void pepitaVuelvaYCambiaDeCiudad(){
+		pepita.come(cienDeAlpiste);
+		pepita.volaHacia(gesell);
+		assertEquals(gesell,pepita.getCiudad());		
+	}
 }
