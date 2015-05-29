@@ -50,7 +50,8 @@ public class GameboardListener implements ApplicationListener {
 	
 	@Override
 	public void resize(int arg0, int arg1) {
-		gameboard.render();
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
