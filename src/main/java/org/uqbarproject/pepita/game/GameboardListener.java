@@ -29,15 +29,9 @@ public class GameboardListener implements ApplicationListener {
 		batch.setProjectionMatrix(camera.combined);
 		batch.begin();
 		
-		this.draw("flying_bird.png", 10, 10);
+		gameboard.cells.forEach(cell -> this.draw(cell));
 		
 		batch.end();
-	}
-
-	private void draw(String texturePath, int posX, int posY) {
-		Texture texture = new Texture(Gdx.files.internal(texturePath));
-		texture.setFilter(TextureFilter.Linear, TextureFilter.Linear);
-		batch.draw(texture, posX, posY);
 	}
 
 	@Override
@@ -45,12 +39,18 @@ public class GameboardListener implements ApplicationListener {
 		batch.dispose();
 	}
 	
+	private void draw(Cell cell) {
+		Texture texture = new Texture(Gdx.files.internal(cell.element));
+		texture.setFilter(TextureFilter.Linear, TextureFilter.Linear);
+		batch.draw(texture, cell.width, cell.height);
+	}
+	
+	
 	
 	
 	@Override
 	public void resize(int arg0, int arg1) {
-		// TODO Auto-generated method stub
-
+		gameboard.render();
 	}
 
 	@Override
