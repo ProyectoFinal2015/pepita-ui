@@ -1,5 +1,6 @@
 package org.uqbarproject.pepita.game;
 
+import com.badlogic.gdx.Files.FileType;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 
 public class GameboardConfiguration extends LwjglApplicationConfiguration {
@@ -9,6 +10,7 @@ public class GameboardConfiguration extends LwjglApplicationConfiguration {
 		this.title = gameboard.getTittle();
 		this.width = gameboard.width();
 		this.height = gameboard.height();
+		this.addIcon("flying_bird.png", FileType.Internal);
 	}
 
 }
